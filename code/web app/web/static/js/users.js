@@ -15,7 +15,7 @@ $(function(){
         editing: {
             allowUpdating: true,
             allowDeleting: true,
-            allowAdding: true
+            allowAdding: false
         },
 
         remoteOperations: {

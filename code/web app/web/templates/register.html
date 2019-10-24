@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="/static/css/stylelogin.css">
+        <title>Crear Usuario</title>
+
+</head>
+    <body>
+    <div class="inner-screen">
+            <div class="log-in">
+                    <form method="post" action="/users">
+                        <img class='log-img' src='/static/img/user.png'>
+                        <input type="text" placeholder="Usuario" name="username" /><br><br/>
+                        <input type="text" placeholder="Nombre" name="name" /><br><br/>
+                        <input type="text" placeholder="Nombre completo" name="fullname" /><br><br/>
+                        <input type="password" placeholder="Contraseña" name="password" /><br><br/>
+                        <input type="submit" value="Registrar" />
+                    </form>
+            </div>
+    </div>
+    </body>
+</html>

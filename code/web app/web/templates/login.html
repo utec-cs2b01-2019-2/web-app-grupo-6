@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<hmtl lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/stylelogin.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class='log-in'>
+        <img class='log-img' src='/static/img/user.png'>
+        <h class='log-text'>Entrar</h><br><br/>
+        <form method='post' action='/login'>
+            <input  name="username" type="text"  placeholder="Usuario" /><br><br/>
+            <input  name="password" type="password" placeholder="Contraseña" /><br><br/>
+            <input  type="submit" value="Login" />
+            <a href="/static/register.html">¿Aún no tienes una cuenta? Regístrate</a>
+        </form>
+    </div>
+</body>
+</hmtl>
