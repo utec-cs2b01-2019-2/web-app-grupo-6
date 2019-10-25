@@ -33,7 +33,7 @@ def create_user():
    session = db.getSession(engine)
    session.add(user)
    session.commit()
-   return 'Created User'
+   return render_template('registered.html')
 
 @app.route('/users/<id>', methods = ['GET'])
 def get_user(id):
