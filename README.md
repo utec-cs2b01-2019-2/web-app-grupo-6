@@ -8,4 +8,4 @@
 | --- | --- | --- | --- | --- | --- |
 |  1 |  | Boza Martin | Adrián | adrianboza |  |
 |  2 |  | Merma | Carlos | CarlosMermaS |  |
-|  3 |  | De la Cruz Quispe | Remy | remdelacruz |  |
+|  3 |  |  |  |  |  |
