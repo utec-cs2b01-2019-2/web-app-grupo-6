@@ -96,7 +96,7 @@ def login():
     if user != None:
         return render_template('index.html')
     else:
-        return "Sorry " +username+ " you are not a valid user"
+        return render_template('noregistered.html')
 
 @app.route('/current', methods = ['GET'])
 def current_user():
