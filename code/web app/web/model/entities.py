@@ -22,6 +22,14 @@ class Message(connector.Manager.Base):
     user_from = relationship(User, foreign_keys=[user_from_id])
     user_to = relationship(User, foreign_keys=[user_to_id])
 
+class Perfile(connector.Manager.Base):
+    __tablename__ = 'perfiles'
+    id = Column(Integer, Sequence('perfile_id_seq'), primary_key=True)
+    perfil_name = Column(String(20))
+    perfil_email = Column(String(20))
+    perfil_number = Column(String(20))
+    perfil_description = Column(String(500))
+
 class Group(connector.Manager.Base):
     __tablename__ = "groups"
     id = Column(Integer, Sequence('groups_id_seq'), primary_key=True)
