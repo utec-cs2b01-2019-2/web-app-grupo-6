@@ -1,5 +1,6 @@
 $(function(){
     var url = "http://127.0.0.1:8000/users";
+
     $("#grid").dxDataGrid({
         dataSource: DevExpress.data.AspNet.createStore({
             key: "id",
@@ -11,47 +12,34 @@ $(function(){
                 ajaxOptions.xhrFields = { withCredentials: true };
             }
         }),
-
         editing: {
             allowUpdating: true,
             allowDeleting: true,
-            allowAdding: false
+            allowAdding: true
         },
-
         remoteOperations: {
             sorting: true,
             paging: true
         },
-
         paging: {
             pageSize: 12
         },
-
         pager: {
             showPageSizeSelector: true,
             allowedPageSizes: [8, 12, 20]
         },
-
         columns: [{
             dataField: "id",
             dataType: "number",
             allowEditing: false
         }, {
-            dataField: "username",
-            dataType: "text",
-            allowEditing: true
+            dataField: "username"
         }, {
-            dataField: "name",
-            dataType: "text",
-            allowEditing: true
+            dataField: "name"
         }, {
-            dataField: "fullname",
-            dataType: "text",
-            allowEditing: true
+            dataField: "fullname"
         }, {
-            dataField: "password",
-            dataType: "text",
-            allowEditing: true
-        }]
+            dataField: "password"
+        } ]
     }).dxDataGrid("instance");
 });

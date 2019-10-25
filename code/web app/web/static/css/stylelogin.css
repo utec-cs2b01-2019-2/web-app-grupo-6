@@ -24,12 +24,12 @@ body{
     left: calc(50% - 50px);
 }
 .log-text{
-    text-align: center; font-size: 25px; color: skyblue;
+    text-align: center; font-size: 25px; color: rgb(155, 235, 135);
 }
 
 input[type="submit"]{
     display: block;
-    background: #0f2899;
+    background: #0f990f;
     width: 314px;
     padding: 12px;
     cursor: pointer;
@@ -49,7 +49,7 @@ input[type="submit"]:hover{
 a{
     text-align: center;
     font-family: Comic Sans MS;
-    color: rgb(201, 177, 211);
+    color: rgb(255, 255, 255);
     display: block;
     margin: 15px auto;
     text-decoration: none;
@@ -59,7 +59,7 @@ a{
 }
 
 a:hover{
-    color: rgb(118, 28, 221);
+    color: skyblue;
 }
 
 @media(min-width:768px){
