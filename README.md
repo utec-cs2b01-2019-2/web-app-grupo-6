@@ -7,5 +7,5 @@
 |   | No. Alumno | Apellidos | Nombre | Usuario Github | % participación |
 | --- | --- | --- | --- | --- | --- |
 |  1 |  | Boza Martin | Adrián | adrianboza |  |
-|  2 |  | Merma | Carlos |  |  |
-|  3 |  | De la Cruz Quispe | Remy |  |  |
+|  2 |  | Merma | Carlos | CarlosMermaS |  |
+|  3 |  | De la Cruz Quispe | Remy | remdelacruz |  |
