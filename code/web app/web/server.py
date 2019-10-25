@@ -108,56 +108,6 @@ def current_user():
 def logout():
     session.clear()
     return render_template('login.html')
-
-#API de GRUPOS
-#1. CREATE
-@app.route('/groups', methods = ['POST'])
-def create_group():
-    c = json.loads(request.data)
-    group = entities.Group(name=c['name'])
-    session_db = db.getSession(engine)
-    session_db.add(group)
-    session_db.commit()
-    return 'Created Group'
-
-#2. READ
-@app.route('/groups/<id>', methods = ['GET'])
-def read_group(id):
-    session_db = db.getSession(engine)
-    group = session_db.query(entities.Group).filter(
-        entities.Group.id == id).first()
-    data = json.dumps(group, cls=connector.AlchemyEncoder)
-    return  Response(data, status=200, mimetype='application/json')
-
-@app.route('/groups', methods = ['GET'])
-def get_all_groups():
-    session_db = db.getSession(engine)
-    dbResponse = session_db.query(entities.Group)
-    data = dbResponse[:]
-    return Response(json.dumps(data,
-        cls=connector.AlchemyEncoder), mimetype='application/json')
-
-# UPDATE
-@app.route('/groups/<id>', methods = ['PUT'])
-def update_group(id):
-    session_db = db.getSession(engine)
-    group = session_db.query(entities.Group).filter(entities.Group.id == id).first()
-    c = json.loads(request.data)
-
-    for key in c.keys():
-        setattr(group, key, c[key])
-    session.add(group)
-    session.commit()
-    return 'Updated GROUP'
-
-# DELETE
-@app.route('/groups/<id>', methods = ['DELETE'])
-def delete_group(id):
-    session_db = db.getSession(engine)
-    user = session_db.query(entities.Group).filter(entities.Group.id == id).one()
-    session_db.delete(user)
-    session_db.commit()
-    return "Deleted User"
 #_____________________________________________________________________________________
 @app.route('/perfil', methods=['GET'])
 def get_perfil():
