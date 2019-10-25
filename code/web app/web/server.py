@@ -74,14 +74,6 @@ def delete_user():
     session.commit()
     return "Deleted User"
 
-@app.route('/create_test_users', methods = ['GET'])
-def create_test_users():
-    db_session = db.getSession(engine)
-    user = entities.User(name="David", fullname="Lazo", password="1234", username="qwerty")
-    db_session.add(user)
-    db_session.commit()
-    return "Test user created!"
-
 @app.route("/login", methods = ["POST"])
 def login():
     username = request.form['username']
@@ -108,7 +100,8 @@ def current_user():
 def logout():
     session.clear()
     return render_template('login.html')
-#_____________________________________________________________________________________
+
+
 @app.route('/perfil', methods=['GET'])
 def get_perfil():
     session = db.getSession(engine)
@@ -130,30 +123,20 @@ def delete_perfil():
 
 @app.route('/perfil', methods = ['POST'])
 def create_perfil():
-    message = json.loads(request.data)
-    perfil_name = message['perfil_name']
-    # 2. look in database
-    db_session = db.getSession(engine)
-
-    perfil= db_session.query(entities.Perfil
-        ).filter(entities.Perfil.perfil_name == perfil_name
-        ).first()
-
-    if perfil != None:
-        return 'NOT'
-
-    else:
-        c = json.loads(request.data)
-        perfil = entities.Perfil(
-            perfil_name=c['perfil_name'],
-            perfil_email=c['perfil_email'],
-            perfil_number=c['perfil_number'],
-            perfil_description=c['perfil_description']
-        )
-        session = db.getSession(engine)
-        session.add(perfil)
-        session.commit()
-        return 'OK'
+   perfil_name = request.form['perfil_name']
+   perfil_email = request.form['perfil_email']
+   perfil_number = request.form['perfil_number']
+   perfil_description = request.form['perfil_description']
+   user = entities.User(
+        perfil_name=perfil_name,
+        perfil_email=perfil_email,
+        perfil_number=perfil_number,
+        perfil_description=perfil_description,
+    )
+   session = db.getSession(engine)
+   session.add(perfil)
+   session.commit()
+   return render_template('index.html')
 
 @app.route('/perfil', methods = ['PUT'])
 def update_perfil():
