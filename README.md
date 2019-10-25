@@ -6,6 +6,6 @@
 
 |   | No. Alumno | Apellidos | Nombre | Usuario Github | % participación |
 | --- | --- | --- | --- | --- | --- |
-|  1 |  | Boza Martin | Adrián | adrianboza |  |
-|  2 |  | Merma Silva | Carlos | CarlosMermaS |  |
+|  1 |  | Boza Martin | Adrián | adrianboza | 50% |
+|  2 |  | Merma Silva | Carlos | CarlosMermaS | 50% |
 |  3 |  |  |  |  |  |
